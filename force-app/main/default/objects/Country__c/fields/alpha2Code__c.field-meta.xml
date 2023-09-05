@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>alpha2Code__c</fullName>
+    <description>Country alpha2Code</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Country alpha2Code</inlineHelpText>
+    <label>alpha2Code</label>
+    <length>2</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
