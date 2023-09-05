@@ -11,7 +11,7 @@
             ISPICKVAL(LeadSource,&quot;&quot;),
             true,
             IF(
-                AND($Profile.Name=&quot;Contract Manager&quot;,ISBLANK(TEXT(NumberOfEmployees))),
+                AND($Profile.Name=&quot;Contract Manager&quot;,ISBLANK(Country)),
                 true,
                 false
             )

@@ -1,18 +1,20 @@
-# Salesforce DX Project: Next Steps
+# NN Task
+## Connect with CountryLayer
+- Added a Batch job to connect with Countrylayer.com which will pull all provided countries, will populate and/or update
+values on the Country__c Object.
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+- The same batch is created as a Schedulable so by scheduling the batch on any time this can be run,
+- A trigger is created to populate the information into all  leads with the same country.
+  (Note: The search of country in Leads is performed by 2 letter code, 3 letter code and whole name).
+- Apex code is ready for deployment with a 99.86% of coverage.
+- Generic Stub class is added for using stub API
+- SObjectBuilder is added for test data generation
 
-## How Do You Plan to Deploy Your Changes?
+## Validation Rule in Lead
+- Validation rule is implemented on Lead that will prevent Owner change if No. of employees, Lead source and Country are
+populated, except for Contract Manager and System administrator Profiles, for Contract Manager the No. of employees can be empty
+for System administrator the country and No. of employees can be empty.
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
-
-## Configure Your Salesforce DX Project
-
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
-
-## Read All About It
-
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+## Flow for Lead
+- A record triggered flow is created to autopopulate the value of the Owner Since field in Lead to the Date/time
+when the Owner change is performed.
